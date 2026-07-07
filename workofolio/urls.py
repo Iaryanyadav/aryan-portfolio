@@ -21,11 +21,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('about/', include('aboutme.urls'), name='aboutme'),
-    path('', include('home.urls'), name='home'),
-    path('education/', include('education.urls'), name='education'),
-    path('projects/', include('projects.urls'), name='projects'),
-    path('experience/', include('experience.urls'), name='experience'),
-    path('skills/', include('skills.urls'), name='skills'),
-    path('contact/', include('contact.urls'), name='contact'),
+    path('about/', include('aboutme.urls')),
+    path('', include('home.urls')),
+    path('education/', include('education.urls')),
+    path('projects/', include('projects.urls')),
+    path('experience/', include('experience.urls')),
+    path('skills/', include('skills.urls')),
+    path('contact/', include('contact.urls')),
 ]
