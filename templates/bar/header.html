@@ -1,0 +1,38 @@
+{% load static %}
+
+<nav class="navbar animate-navbar">
+    <div class="nav-container">
+        <a href="{% url 'home' %}" class="nav-brand">
+            <img src="{% static 'images/aryan.png' %}" alt="Aryan" class="nav-brand-icon">
+            Aryan
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="nav-links">
+            <a href="{% url 'home' %}">
+                <i class="fa-solid fa-house"></i> Home
+            </a>
+            <a href="{% url 'aboutme' %}">
+                <i class="fa-solid fa-user"></i> About
+            </a>
+            <a href="{% url 'education' %}">
+                <i class="fa-solid fa-graduation-cap"></i> Education
+            </a>
+            <a href="{% url 'experience' %}">
+                <i class="fa-solid fa-briefcase"></i> Experience
+            </a>
+            <a href="{% url 'projects' %}">
+                <i class="fa-solid fa-folder-open"></i> Projects
+            </a>
+            <a href="{% url 'skills_view' %}">
+                <i class="fa-solid fa-laptop-code"></i> Skills
+            </a>
+            <a href="{% url 'contact' %}">
+                <i class="fa-solid fa-envelope"></i> Contact
+            </a>
+        </div>
+    </div>
+</nav>

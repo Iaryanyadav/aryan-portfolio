@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Aryan - Home {% endblock %}
+
+{% block content %}
+
+<div class="home">
+    <div class="home-content">
+        {% static 'images/aryan.jpg' as aryan_image %}
+        <img src="{{ aryan_image }}" alt="Aryan" class="home-image animate-hero-image">
+        <h1 class="animate-hero-title">ARYAN</h1>
+        <h2 class="animate-hero-subtitle">
+            <i class="fa-solid fa-database"></i>
+            Data Engineer and Software Developer
+        </h2>
+        <span class="animate-hero-text">
+            Motivated final-year Computer Science student with full-stack development and backend engineering experience across two internships. Skilled in building scalable software systems, REST APIs, and automated pipelines using Python, Java, React, and Node.js. Proven ability to lead development teams, ship production-grade features, and apply object-oriented design and system design principles. Seeking a fresher Software Engineer role to build robust, high-performance applications.
+        </span>
+    </div>
+    <div class="home-details animate-hero-contact">
+        <div class="home-email">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:aryanrao.tech@gmail.com">
+                aryanrao.tech@gmail.com
+            </a>
+        </div>
+        <div class="home-mobile">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+918168355120">
+                +91-8168355120
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

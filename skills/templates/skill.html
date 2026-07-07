@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Aryan - Skills {% endblock %}
+
+{% block content %}
+
+<div class="page-container">
+    <div class="page-header scroll-animate fade-up">
+        <i class="fa-solid fa-laptop-code header-icon"></i>
+        <h1>Skills</h1>
+        <p>Technologies and tools I work with across development, data, and cloud.</p>
+    </div>
+
+    {% if skills_list %}
+        <div class="skills-grid">
+            {% for skill in skills_list %}
+                <div class="skill-category scroll-animate fade-up" data-delay="{{ forloop.counter }}">
+                    <h4>
+                        <i class="fa-solid fa-star"></i>
+                        {{ skill.name }}
+                    </h4>
+                    <div class="skill-tags">
+                        {% for s in skill.skill %}
+                            <span class="skill-tag">{{ s }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state scroll-animate fade-up">
+            <i class="fa-solid fa-laptop-code"></i>
+            <p>No skills available.</p>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

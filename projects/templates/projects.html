@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Aryan - Projects {% endblock %}
+
+{% block content %}
+
+<div class="page-container">
+    <div class="page-header scroll-animate fade-up">
+        <i class="fa-solid fa-folder-open header-icon"></i>
+        <h1>Projects</h1>
+        <p>A showcase of my technical projects spanning security, ML, and automation.</p>
+    </div>
+
+    {% if projects %}
+        <div class="projects-grid">
+            {% for project in projects %}
+                <div class="project-card scroll-animate fade-up" data-delay="{{ forloop.counter }}">
+                    <img src="{% static project.img %}" alt="{{ project.title }}" class="project-card-image">
+                    <div class="project-card-body">
+                        <h2>
+                            <i class="fa-solid fa-code-branch"></i>
+                            {{ project.title }}
+                        </h2>
+                        <div class="mb-4">
+                            <h3 class="project-section-title">
+                                <i class="fa-solid fa-align-left"></i> Description
+                            </h3>
+                            <ul>
+                                {% for des in project.description %}
+                                    <li>{{ des }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h3 class="project-section-title">
+                                <i class="fa-solid fa-layer-group"></i> Technologies Used
+                            </h3>
+                            <ul>
+                                {% for stack in project.stacks %}
+                                    <li>{{ stack }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="project_link">
+                            <i class="fa-brands fa-github"></i>
+                            <a href="{{ project.github_link }}" target="_blank" rel="noopener">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state scroll-animate fade-up">
+            <i class="fa-solid fa-folder-open"></i>
+            <p>No projects found.</p>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %} Aryan - Experience {% endblock %}
+
+{% block content %}
+
+<div class="page-container">
+    <div class="page-header scroll-animate fade-up">
+        <i class="fa-solid fa-briefcase header-icon"></i>
+        <h1>Experience</h1>
+        <p>My professional journey and the roles that shaped my engineering skills.</p>
+    </div>
+
+    {% if experiences %}
+        <div class="experience-list">
+            {% for experience in experiences %}
+                <div class="experience scroll-animate fade-left" data-delay="{{ forloop.counter }}">
+                    <h2>
+                        <i class="fa-solid fa-building"></i>
+                        {{ experience.title }}
+                    </h2>
+                    <div class="experience-meta">
+                        <p><i class="fa-solid fa-building-columns"></i> <strong>Company:</strong> {{ experience.company }}</p>
+                        <p><i class="fa-solid fa-calendar"></i> <strong>Duration:</strong> {{ experience.duration }}</p>
+                        <p><i class="fa-solid fa-location-dot"></i> <strong>Location:</strong> {{ experience.location }}</p>
+                    </div>
+                    <h3><i class="fa-solid fa-list-check"></i> Responsibilities</h3>
+                    <ul>
+                        {% for responsibility in experience.description %}
+                            <li>{{ responsibility }}</li>
+                        {% endfor %}
+                    </ul>
+                    <h3><i class="fa-solid fa-wrench"></i> Tools</h3>
+                    <ul>
+                        {% for tool in experience.tools %}
+                            <li>{{ tool }}</li>
+                        {% endfor %}
+                    </ul>
+                    <h3><i class="fa-solid fa-microchip"></i> Technologies Used</h3>
+                    <ul>
+                        {% for technology in experience.technologies %}
+                            <li>{{ technology }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state scroll-animate fade-up">
+            <i class="fa-solid fa-briefcase"></i>
+            <p>No experience available.</p>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
