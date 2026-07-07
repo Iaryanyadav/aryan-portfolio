@@ -3,6 +3,17 @@ from django.shortcuts import render
 def projects(request):
     projects = [
         {
+            'img': 'project_images/PulseBoard.png',
+            'title': 'PulseBoard: Real-time Messaging & Notification Platform',
+            'description': [
+                "Architected and developed PulseBoard, a real-time messaging platform implementing asynchronous ASGI consumers to enable live chat, presence tracking, and push notifications across multiple concurrent user sessions.", "Designed a modular, scalable application architecture by decomposing the platform into 5 independent Django apps (accounts, chat, presence, notifications, dashboard), improving code maintainability and enabling isolated testing of each feature.", "Implemented real-time bidirectional communication using Django Channels’ group-based publish/subscribe pattern, reducing message latency to near-instant delivery compared to traditional HTTP polling, and eliminating the need for client-side refresh."
+            ],
+            'stacks': [
+                'Python', 'Django', 'Django Channels', 'WebSockets', 'ASGI', 'Daphne', 'SQLite', 'JavaScript', 'HTML/CSS', 'Git'
+            ],
+            'github_link': 'https://github.com/Iaryanyadav/PulseBoard',
+        },
+        {
             'img': 'project_images/mitigrate.png',
             'title': 'Autonomous Threat Detection & Mitigation System',
             'description': [
